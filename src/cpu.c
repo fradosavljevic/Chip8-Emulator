@@ -27,18 +27,8 @@ bool chip8_loadROM(Chip8 *cpu, char *file) {
         return false;
     }
 
-    uint8_t *buffer = (uint8_t*)malloc(fileSize);
-    if (buffer == NULL) {
-        perror("Memory allocation failed");
-        fclose(f);
-        return false;
-    }
-
-    size_t bytesRead = fread(buffer, 1, fileSize, f);
+    fread(cpu->memory + 0x200, 1, fileSize, f);
     fclose(f);
-
-    memcpy(cpu->memory + 0x200, buffer, bytesRead);
-    free(buffer);
     return true;
 }
 
