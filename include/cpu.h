@@ -39,10 +39,10 @@ typedef struct {
 bool chip8_loadROM(Chip8 *cpu, char *file);
 void chip8_init(Chip8 *cpu);
 void chip8_cycle(Chip8 *cpu);
-void chip8_clsret(Chip8 *cpu, DecodedOpcode *DO);
-void chip8_exec8xy(Chip8 *cpu, DecodedOpcode *DO);
-void chip8_execEx(Chip8 *cpu, DecodedOpcode *DO);
-void chip8_execFx(Chip8 *cpu, DecodedOpcode *DO);
+void chip8_clsret(Chip8 *cpu, DecodedOpcode *decoded);
+void chip8_exec8xy(Chip8 *cpu, DecodedOpcode *decoded);
+void chip8_execEx(Chip8 *cpu, DecodedOpcode *decoded);
+void chip8_execFx(Chip8 *cpu, DecodedOpcode *decoded);
 uint16_t chip8_fetch(Chip8 *cpu);
 DecodedOpcode chip8_decode(uint16_t opcode);
 

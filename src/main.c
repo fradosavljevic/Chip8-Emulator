@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "cpu.h"
+#include "../include/cpu.h"
 
 // Temporary function for testing
 void chip8_render_console(Chip8 *cpu) {
